@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import data from './db/data';
+import Card from './Components/Card';
+import CarouselPage from "./Components/Carousel";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1 className=" font-semibold text-black ml-44 dark:bg-gray-400">Sports</h1>
+        <div className="dark:bg-gradient-to-br from-white via-[#18282A] to-[#221A2C]">
+          <Card/>
+          <CarouselPage/>
+        </div>
     </div>
   );
 }

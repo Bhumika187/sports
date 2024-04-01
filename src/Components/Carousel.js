@@ -3,7 +3,7 @@ import cont from '../db/content.js';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 const CarouselPage = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -40,10 +40,19 @@ const CarouselPage = () => {
           }
         ]
       };
+      useEffect(() => {
+        // Toggle dark mode
+        if (darkMode) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      }, [darkMode]);
+    
   return (
     <>
-    <div className="flex flex-col justify-center text-center text-black dark:text-white mt-10">
-        <h1 className="text-3xl font-bold">Collection Spotlight</h1>
+    <div className="flex flex-col justify-center text-center text-white mt-10">
+         <h1 className="text-3xl font-bold ">Collection Spotlight</h1>
         <p>Discover extraordinary moments with our Spotlight Collection metatickets—exclusive access to premium events for an unforgettable experience. Grab yours today!</p>
     </div> 
     {/* w-3/4 m-auto duration-300 */}
@@ -66,6 +75,7 @@ const CarouselPage = () => {
                 
             </div>
           ))}
+           
             </Slider>
         </div>
     </div>

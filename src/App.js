@@ -8,7 +8,7 @@ import CarouselPage from "./Components/Carousel";
 
 function App() {
   return (
-    <div>
+    <div className ="dark:bg-gradient-to-br from-white via-[#18282A] to-[#221A2C]">
       <h1 className=" font-semibold text-black ml-44 dark:bg-gray-400">Sports</h1>
       
         <div>

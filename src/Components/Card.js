@@ -2,7 +2,7 @@
 // import data from '../db/data.js';
 
 // const Card = () => {
-//   const [darkMode, setDarkMode] = useState(false);
+//   const [darkMode, setDarkMode] = useState(true);
 
 //   useEffect(() => {
 //     if (darkMode) {
@@ -14,7 +14,7 @@
 
 //    return (
   
-//     <div className={`flex flex-wrap justify-center gap-1  ${darkMode ? 'text-white' : 'text-black'}`}>
+//     <div className={`flex flex-wrap justify-center gap-1  ${darkMode ? 'text-white' : 'text-black bg-white'}`}>
 //       <button
 //         onClick={() => {
 //           setDarkMode(!darkMode);

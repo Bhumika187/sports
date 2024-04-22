@@ -11,7 +11,7 @@ function App() {
     <div>
       <h1 className=" font-semibold text-black ml-44 dark:bg-gray-400">Sports</h1>
       
-        <div className ="dark:bg-gradient-to-br from-white via-[#18282A] to-[#221A2C]">
+        <div>
           <Card/>
           <CarouselPage/>
         </div>

@@ -14,7 +14,7 @@
 
 //    return (
   
-//     <div className={`flex flex-wrap justify-center gap-1  ${darkMode ? 'text-white' : 'text-black'}`}>
+//     <div className={`flex flex-wrap justify-center gap-1  ${darkMode ? 'text-white' : 'text-black bg-white'}`}>
 //       <button
 //         onClick={() => {
 //           setDarkMode(!darkMode);

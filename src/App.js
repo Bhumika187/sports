@@ -8,8 +8,8 @@ import CarouselPage from "./Components/Carousel";
 
 function App() {
   return (
-    <div>
-      <h1 className=" font-semibold text-black ml-44 dark:bg-gray-400">Sports</h1>
+    <div className="bg-white dark:bg-black">
+      <h1 className=" font-semibold text-black ml-44 dark:bg-gray-400">Sports</h1>  
       {/* className ="dark:bg-gradient-to-br from-white via-[#18282A] to-[#221A2C]" */}
         <div>
           <Card/>

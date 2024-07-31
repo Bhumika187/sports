@@ -2,22 +2,25 @@ import React, { useState, useEffect } from 'react';
 import data from '../db/data.js';
 
 const Card = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     // Toggle dark mode class on the root element
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
+    if (theme=== "darkMode") {
+      document.documentElement.classList.add('darkMode');
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove('darkMode');
     }
-  }, [darkMode]);
+  }, [theme])
 
+  const handleThemeSwitch=()=>{
+    setTheme(theme==="darkMode"? "light": "darkMode");
+  }
   return (
-    <div className={`min-h-screen flex flex-col items-center transition-colors duration-500 ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+    <div className={`min-h-screen flex flex-col items-center transition-colors duration-500 bg-white ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <button
-        onClick={() => setDarkMode(!darkMode)}
-        className={`absolute top-10 right-10 px-4 py-2 rounded ${darkMode ? 'bg-white text-black' : 'bg-gray-800 text-white'}`}
+        onClick={handleThemeSwitch}
+        className={`absolute top-10 right-10 px-4 py-2 rounded bg-white dark:bg-black}`}
       >
         {darkMode ? 'Light' : 'Dark'} Mode
       </button>

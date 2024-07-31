@@ -135,6 +135,7 @@ const CarouselPage = ({ theme }) => {
       
       <div className={`flex justify-center ${theme === "darkMode" ? 'bg-gray-100' : 'bg-gradient-to-br from-white via-[#18282A] to-[#221A2C]'}`}>
         <div className="w-full max-w-4xl p-2">
+        <div className='hover:cursor-pointer hover:scale-110 duration-300  box h-[500px] w-[600px] border p-2 bg-white last rounded-md '>
           <Slider {...settings}>
             {cont.map((d, index) => (
               <div key={index} className={`bg-white text-black rounded-xl p-4 ${theme === "darkMode" ? 'bg-gray-800 text-white' : ''}`}>
@@ -151,6 +152,7 @@ const CarouselPage = ({ theme }) => {
               </div>
             ))}
           </Slider>
+          </div>
         </div>
       </div>
     </>

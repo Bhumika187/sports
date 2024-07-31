@@ -23,7 +23,7 @@ const Card = ({theme}) => {
         // onClick={handleThemeSwitch}
         className={`absolute top-10 right-10 px-4 py-2 rounded ${theme === "darkMode" ? 'bg-white text-black' : 'bg-black text-white'}`}
       >
-        {theme === "darkMode" ? 'Light' : 'Dark'} Mode
+        {theme === "darkMode" ? 'Dark' : 'Light'} Mode
       </button>
       <div className="flex flex-wrap justify-center gap-4">
         {data.slice(0, 4).map((product) => {

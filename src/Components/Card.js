@@ -25,13 +25,14 @@ const Card = () => {
       >
         {theme === "darkMode" ? 'Light' : 'Dark'} Mode
       </button>
-      <div className="flex flex-wrap justify-center gap-4 mt-20">
+      <div className="flex flex-wrap justify-center gap-1">
         {data.slice(0, 4).map((product) => {
           const { image, title, totalEvents, sport } = product;
           return (
             <section
+             
+              className={`card flex flex-col items-center hover:cursor-pointer hover:scale-110 duration-300 mx-2 my-4 bg-white w-90 h-54 transition duration-500 ${theme === "darkMode" ? 'bg-[#3B3E47] text-white' : ''}`}
               key={title}
-              className={`flex flex-col items-center mx-2 my-4 bg-white w-90 h-54 transition duration-500 ${theme === "darkMode" ? 'bg-[#3B3E47] text-white' : ''}`}
             >
               <img src={image} alt="hero-img" className="card-img" />
               <div className="card-title font-semibold">{title}</div>

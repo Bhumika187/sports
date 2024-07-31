@@ -31,11 +31,11 @@ const Card =() => {
           return (
             <section
               key={title}
-              className={`card flex flex-col items-center hover:cursor-pointer hover:scale-110 duration-300 mx-2 my-4 w-90 h-54 transition duration-500 ${theme === "darkMode" ? 'bg-[#3B3E47] text-white' : 'bg-gray-400 text-black'}`}
+              className={`card flex flex-col items-center hover:cursor-pointer hover:scale-110 duration-300 mx-1 my-4 w-90 h-54 transition duration-500 ${theme === "darkMode" ? 'bg-[#3B3E47] text-white' : 'bg-gray-400 text-black'}`}
             >
               <img src={image} alt="hero-img" className="card-img" />
               <div className="card-title font-semibold">{title}</div>
-              <div className={`flex flex-wrap ${theme === "darkMode" ? 'bg-[#292B32] text-white' : 'bg-gray-200 text-black'}`}>
+              <div className={`flex flex-wrap ${theme === "darkMode" ? 'bg-gray-200 text-black' : 'bg-[#292B32] text-white'}`}>
                 <div className="flex flex-col mr-10">
                   <div>Total Events</div>
                   <div className="card-event font-semibold">{totalEvents}</div>

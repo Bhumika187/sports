@@ -31,7 +31,7 @@ const Card = ({theme}) => {
           return (
             <section
               key={title}
-              className={`card flex flex-col items-center hover:cursor-pointer hover:scale-110 duration-300 mx-2 my-4 w-90 h-54 transition duration-500 ${theme === "darkMode" ? 'bg-[#3B3E47] text-white' : 'bg-white text-black'}`}
+              className={`card flex flex-col items-center hover:cursor-pointer hover:scale-110 duration-300 mx-2 my-4 w-90 h-54 transition duration-500 ${theme === "darkMode" ? 'bg-[#3B3E47] text-white' : 'bg-gray-400 text-black'}`}
             >
               <img src={image} alt="hero-img" className="card-img" />
               <div className="card-title font-semibold">{title}</div>

@@ -3,19 +3,20 @@ import './App.css';
 import data from './db/data';
 import Card from './Components/Card';
 import CarouselPage from "./Components/Carousel";
-
-
+import { ThemeProvider } from './ThemeContext'; // Import ThemeProvider
 
 function App() {
   return (
-    <div className="bg-white dark:bg-black">
-      <h1 className=" font-semibold text-black ml-44 dark:bg-gray-400">Sports</h1>  
-      {/* className ="dark:bg-gradient-to-br from-white via-[#18282A] to-[#221A2C]" */}
+    <ThemeProvider> {/* Wrap your application with ThemeProvider */}
+      <div className="min-h-screen">
+        <h1 className="font-semibold text-black ml-44">Sports</h1>  
+        {/* Adjust the theme styles globally if needed */}
         <div>
-          <Card/>
-          <CarouselPage/>
+          <Card />
+          <CarouselPage />
         </div>
-    </div>
+      </div>
+    </ThemeProvider>
   );
 }
 

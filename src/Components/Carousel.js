@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useTheme } from '../ThemeContext';
 import cont from '../db/content.js';
 
 const CarouselPage = () => {
-  const { theme, toggleTheme } = useTheme();
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    // Toggle dark mode class on the root element
+    if (theme === "darkMode") {
+      document.documentElement.classList.add('darkMode');
+    } else {
+      document.documentElement.classList.remove('darkMode');
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "darkMode" ? "light" : "darkMode");
+  };
 
   const settings = {
     dots: true,
@@ -44,16 +56,16 @@ const CarouselPage = () => {
 
   return (
     <>
-      <div className={`flex flex-col justify-center text-center mt-10 ${theme === "darkMode" ? 'text-white' : 'text-black'}`}>
+      <div className="flex flex-col justify-center text-center text-white mt-10">
         <h1 className="text-3xl font-bold">Collection Spotlight</h1>
         <p>Discover extraordinary moments with our Spotlight Collection metatickets—exclusive access to premium events for an unforgettable experience. Grab yours today!</p>
       </div> 
-
+      
       <div className="flex justify-center mt-8">
-        <div className={`w-full max-w-4xl p-2 ${theme === "darkMode" ? 'bg-[#1a1a1a]' : 'bg-white'}`}>
+        <div className="w-full max-w-4xl p-2">
           <Slider {...settings}>
             {cont.map((d, index) => (
-              <div key={index} className={`bg-white text-black rounded-xl p-4 ${theme === "darkMode" ? 'bg-[#3B3E47] text-white' : ''}`}>
+              <div key={index} className="bg-white text-black rounded-xl p-4">
                 <div className="h-56 flex justify-center items-center">
                   <img src={d.img} alt="" className="h-full w-full object-cover rounded-lg" />
                 </div>

@@ -58,8 +58,8 @@ const Card =() => {
           </div>
         </section>
       </div>
-      <div className={`flex flex-col justify-center text-center mt-5 ${theme === "darkMode" ? 'text-white bg-black' : 'text-black bg-white'}`}>
-        <h1 className={`text-3xl font-bold mt-4 ${theme === "darkMode" ? 'text-white bg-black' : 'text-black bg-white'}`}>Collection Spotlight</h1>
+      <div className={`flex flex-col justify-center text-center mt-5 ${theme === "darkMode" ? 'text-white' : 'text-black'}`}>
+        <h1 className={`text-3xl font-bold mt-4 ${theme === "darkMode" ? 'text-white' : 'text-black'}`}>Collection Spotlight</h1>
         <p>Discover extraordinary moments with our Spotlight Collection metatickets—exclusive access to premium events for an unforgettable experience. Grab yours today!</p>
       </div> 
     </div>

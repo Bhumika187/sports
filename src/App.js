@@ -18,9 +18,7 @@ function App() {
       >
         {theme === "darkMode" ? 'Light Mode' : 'Dark Mode'}
       </button>
-      <div className="text-center">
-        <h1 className="font-semibold mt-4">Sports</h1>
-      </div>
+      
       <div>
         <Card theme={theme} />
         <CarouselPage theme={theme} />

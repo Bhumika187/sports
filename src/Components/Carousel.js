@@ -131,12 +131,9 @@ const CarouselPage = ({ theme }) => {
 
   return (
     <>
-      <div className={`flex flex-col justify-center text-center mt-10 ${theme === "darkMode" ? 'text-white' : 'text-black'}`}>
-        <h1 className={`text-3xl font-bold ${theme === "darkMode" ? 'text-white' : 'text-black'}`}>Collection Spotlight</h1>
-        <p>Discover extraordinary moments with our Spotlight Collection metatickets—exclusive access to premium events for an unforgettable experience. Grab yours today!</p>
-      </div> 
       
-      <div className={`flex justify-center mt-8 ${theme === "darkMode" ? 'bg-gray-900' : 'bg-gray-100'}`}>
+      
+      <div className={`flex justify-center ${theme === "darkMode" ? 'bg-gray-100' : 'bg-gradient-to-br from-white via-[#18282A] to-[#221A2C]'}`}>
         <div className="w-full max-w-4xl p-2">
           <Slider {...settings}>
             {cont.map((d, index) => (

@@ -1,29 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import data from '../db/data.js';
 
-const Card = ({theme}) => {
-  // const [theme, setTheme] = useState("light");
+const Card =() => {
+  const [theme, setTheme] = useState("light");
 
-  // useEffect(() => {
-  //   // Toggle dark mode class on the root element
-  //   if (theme === "darkMode") {
-  //     document.documentElement.classList.add('darkMode');
-  //   } else {
-  //     document.documentElement.classList.remove('darkMode');
-  //   }
-  // }, [theme]);
+  useEffect(() => {
+    // Toggle dark mode class on the root element
+    if (theme === "darkMode") {
+      document.documentElement.classList.add('darkMode');
+    } else {
+      document.documentElement.classList.remove('darkMode');
+    }
+  }, [theme]);
 
-  // const handleThemeSwitch = () => {
-  //   setTheme(theme === "darkMode" ? "light" : "darkMode");
-  // };
+  const handleThemeSwitch = () => {
+    setTheme(theme === "darkMode" ? "light" : "darkMode");
+  };
 
   return (
     <div className={`min-h-screen flex flex-col justify-center items-center transition-colors duration-500 ${theme === "darkMode" ? 'bg-gradient-to-br from-white via-[#18282A] to-[#221A2C] text-white' : 'bg-white text-black'}`}>
       <button
-        // onClick={handleThemeSwitch}
+        onClick={handleThemeSwitch}
         className={`absolute top-10 right-10 px-4 py-2 rounded ${theme === "darkMode" ? 'bg-white text-black' : 'bg-black text-white'}`}
       >
-        {theme === "darkMode" ? 'Dark' : 'Light'} Mode
+        {theme === "darkMode" ? 'Light' : 'Dark'} Mode
       </button>
       <div className="flex flex-wrap justify-center gap-4">
         {data.slice(0, 4).map((product) => {
@@ -58,6 +58,10 @@ const Card = ({theme}) => {
           </div>
         </section>
       </div>
+      <div className={`flex flex-col justify-center text-center mt-5 ${theme === "darkMode" ? 'text-white bg-black' : 'text-black bg-white'}`}>
+        <h1 className={`text-3xl font-bold mt-4 ${theme === "darkMode" ? 'text-white bg-black' : 'text-black bg-white'}`}>Collection Spotlight</h1>
+        <p>Discover extraordinary moments with our Spotlight Collection metatickets—exclusive access to premium events for an unforgettable experience. Grab yours today!</p>
+      </div> 
     </div>
   );
 };

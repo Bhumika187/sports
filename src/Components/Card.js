@@ -6,23 +6,24 @@ const Card = () => {
 
   useEffect(() => {
     // Toggle dark mode class on the root element
-    if (theme=== "darkMode") {
+    if (theme === "darkMode") {
       document.documentElement.classList.add('darkMode');
     } else {
       document.documentElement.classList.remove('darkMode');
     }
-  }, [theme])
+  }, [theme]);
 
-  const handleThemeSwitch=()=>{
-    setTheme(theme==="darkMode"? "light": "darkMode");
-  }
+  const handleThemeSwitch = () => {
+    setTheme(theme === "darkMode" ? "light" : "darkMode");
+  };
+
   return (
-    <div className={`min-h-screen flex flex-col items-center transition-colors duration-500 bg-white ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}`}>
+    <div className={`min-h-screen flex flex-col items-center transition-colors duration-500 ${theme === "darkMode" ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <button
         onClick={handleThemeSwitch}
-        className={`absolute top-10 right-10 px-4 py-2 rounded bg-white dark:bg-black}`}
+        className={`absolute top-10 right-10 px-4 py-2 rounded ${theme === "darkMode" ? 'bg-black' : 'bg-white'}`}
       >
-        {darkMode ? 'Light' : 'Dark'} Mode
+        {theme === "darkMode" ? 'Light' : 'Dark'} Mode
       </button>
       <div className="flex flex-wrap justify-center gap-4 mt-20">
         {data.slice(0, 4).map((product) => {
@@ -30,11 +31,11 @@ const Card = () => {
           return (
             <section
               key={title}
-              className={`card flex flex-col items-center p-4 hover:cursor-pointer hover:scale-110 duration-300 rounded-lg w-80 ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}
+              className={`card flex flex-col items-center p-4 hover:cursor-pointer hover:scale-110 duration-300 rounded-lg w-80 ${theme === "darkMode" ? 'bg-gray-800' : 'bg-gray-100'}`}
             >
               <img src={image} alt="hero-img" className="card-img w-full h-40 object-cover rounded-t-lg" />
               <div className="card-title mt-4 font-semibold text-center">{title}</div>
-              <div className={`flex flex-col w-full mt-2 ${darkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black'}`}>
+              <div className={`flex flex-col w-full mt-2 ${theme === "darkMode" ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black'}`}>
                 <div className="flex justify-between px-4 py-2">
                   <div>Total Events</div>
                   <div className="font-semibold">{totalEvents}</div>
@@ -47,7 +48,7 @@ const Card = () => {
             </section>
           );
         })}
-        <section className={`card flex flex-col items-center mx-2 my-4 ${darkMode ? 'bg-gray-800' : 'bg-gray-100'}`}>
+        <section className={`card flex flex-col items-center mx-2 my-4 ${theme === "darkMode" ? 'bg-gray-800' : 'bg-gray-100'}`}>
           <div>
             <img src="assets/img21.png" alt="dk-img" className="card-img w-full h-40 object-cover rounded-t-lg" />
           </div>
